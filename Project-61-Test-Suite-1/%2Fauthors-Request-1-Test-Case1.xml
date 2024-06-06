@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fc00279c-abf3-4cac-9f1d-6a45a4f3276a" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="/authors-Request 1 Test Case" searchProperties="true" timeout="0">
+  <con:settings id="9a42a187-ecb5-473c-8b19-5999a65c9860">
+    <con:setting id="fc00279c-abf3-4cac-9f1d-6a45a4f3276afileName">%2Fauthors-Request-1-Test-Case1</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="POST Request" id="e033c387-ddd2-4d3b-b8b2-a9a6c001784f">
+    <con:settings/>
+    <con:config service="Darth Library" resourcePath="/SE-Design/Darth_Library_Fork/1.0.0/authors" methodName="POST" xsi:type="con:RestRequestStep">
+      <con:restRequest name="POST Request" id="ce742e2d-78a5-46e6-8b2c-22c36460aef1" mediaType="application/json">
+        <con:settings/>
+        <con:endpoint>https://virtserver.swaggerhub.com</con:endpoint>
+        <con:request/>
+        <con:assertion type="Valid HTTP Status Codes" id="fb68e8ab-8c8a-413d-98fc-cf5eca4c9d43" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="SwaggerComplianceAssertion" id="9c70697f-3938-4da8-850b-881f206534f9" name="Swagger Compliance Assertion">
+          <con:configuration>
+            <swaggerUrl>https://api.swaggerhub.com/apis/SE-Design/Darth_Library_Fork/1.0.0</swaggerUrl>
+            <strictMode>true</strictMode>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="1254ff25-4bf4-4e5a-b057-09b994979384" name="Response SLA">
+          <con:configuration>
+            <SLA>200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

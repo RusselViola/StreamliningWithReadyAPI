@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="9dcd78ca-1624-42f2-8a1a-8344b9e0ad18" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="/books/[id]-Request 1 Test Case" searchProperties="true" timeout="0">
+  <con:settings id="4dfce307-a713-45e9-b8eb-31cf5fa8dec4">
+    <con:setting id="9dcd78ca-1624-42f2-8a1a-8344b9e0ad18fileName">%2Fbooks%2F%5Bid%5D-Request-1-Test-Case2</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="PATCH Request" id="1e203177-88c6-4df9-b42d-9b3e6b8c94b8">
+    <con:settings/>
+    <con:config service="Darth Library" resourcePath="/SE-Design/Darth_Library_Fork/1.0.0/books/{id}" methodName="PATCH" xsi:type="con:RestRequestStep">
+      <con:restRequest name="PATCH Request" id="7975735b-0fc4-4cc8-b1cf-8823719b9a5c" mediaType="application/json">
+        <con:settings/>
+        <con:endpoint>https://virtserver.swaggerhub.com</con:endpoint>
+        <con:request/>
+        <con:assertion type="Valid HTTP Status Codes" id="1701d013-d94f-4843-8636-efb49b8723cc" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="SwaggerComplianceAssertion" id="ecbf8f6f-b8bc-4f31-bd11-a4053f3be5e2" name="Swagger Compliance Assertion">
+          <con:configuration>
+            <swaggerUrl>https://api.swaggerhub.com/apis/SE-Design/Darth_Library_Fork/1.0.0</swaggerUrl>
+            <strictMode>true</strictMode>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="e24b0616-389b-45c4-9ef1-c7d5044b9a44" name="Response SLA">
+          <con:configuration>
+            <SLA>200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

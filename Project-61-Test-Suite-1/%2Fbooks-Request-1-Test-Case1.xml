@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="21357627-aa34-4f77-80b2-bcdab98eb3cb" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="/books-Request 1 Test Case" searchProperties="true" timeout="0">
+  <con:settings id="51ee4c33-e79d-41b0-8115-3b3411147a27">
+    <con:setting id="21357627-aa34-4f77-80b2-bcdab98eb3cbfileName">%2Fbooks-Request-1-Test-Case1</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="POST Request" id="94211568-eeb0-4633-80ce-096768ec5be5">
+    <con:settings/>
+    <con:config service="Darth Library" resourcePath="/SE-Design/Darth_Library_Fork/1.0.0/books" methodName="POST" xsi:type="con:RestRequestStep">
+      <con:restRequest name="POST Request" id="dd5e403c-1925-4500-a9e9-c155d7887283" mediaType="application/json">
+        <con:settings/>
+        <con:endpoint>https://virtserver.swaggerhub.com</con:endpoint>
+        <con:request/>
+        <con:assertion type="Valid HTTP Status Codes" id="26b8d574-815d-402d-8afd-28c96f90c7bf" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="SwaggerComplianceAssertion" id="12e8b357-c3f8-4491-978c-7835a4a32195" name="Swagger Compliance Assertion">
+          <con:configuration>
+            <swaggerUrl>https://api.swaggerhub.com/apis/SE-Design/Darth_Library_Fork/1.0.0</swaggerUrl>
+            <strictMode>true</strictMode>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="f2854a81-f083-4900-a8dc-f7c9dfd11d9c" name="Response SLA">
+          <con:configuration>
+            <SLA>200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

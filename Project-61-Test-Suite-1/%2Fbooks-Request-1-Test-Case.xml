@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="5dd9e285-bc2f-41ef-b19d-42211642eb8a" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="/books-Request 1 Test Case" searchProperties="true" timeout="0">
+  <con:settings id="f08323aa-01ca-4e2d-b746-7deb38ef58b7">
+    <con:setting id="5dd9e285-bc2f-41ef-b19d-42211642eb8afileName">%2Fbooks-Request-1-Test-Case</con:setting>
+  </con:settings>
+  <con:testStep type="datasource" name="Data Source" id="3992f6fe-6e69-499f-98bd-34e4b92ceaa9">
+    <con:settings/>
+    <con:config xsi:type="con:DataSourceStep">
+      <con:dataSource type="Data Generator">
+        <con:configuration>
+          <generatedDataCount>10</generatedDataCount>
+          <generatorsTotalNumber>3</generatorsTotalNumber>
+          <lastSelectedProperty>0</lastSelectedProperty>
+          <GeneratorType0>CUSTOM</GeneratorType0>
+          <PropertyName0>title</PropertyName0>
+          <repetitionCounttitle>0</repetitionCounttitle>
+          <repeatValuestitle>false</repeatValuestitle>
+          <CustomStringDataGeneratorFormattitle>%STR(5,10,True,True,True,True)</CustomStringDataGeneratorFormattitle>
+          <GeneratorType1>BOOL</GeneratorType1>
+          <PropertyName1>fullMatch</PropertyName1>
+          <repetitionCountfullMatch>0</repetitionCountfullMatch>
+          <repeatValuesfullMatch>false</repeatValuesfullMatch>
+          <boolViewfullMatch>Classic</boolViewfullMatch>
+          <GeneratorType2>INT</GeneratorType2>
+          <PropertyName2>authorID</PropertyName2>
+          <repetitionCountauthorID>0</repetitionCountauthorID>
+          <repeatValuesauthorID>false</repeatValuesauthorID>
+          <IntegerDataGeneratorMinValueauthorID>1</IntegerDataGeneratorMinValueauthorID>
+          <IntegerDataGeneratorMaxValueauthorID>100</IntegerDataGeneratorMaxValueauthorID>
+          <IntegerDataGeneratorStepValueauthorID>1</IntegerDataGeneratorStepValueauthorID>
+          <IntegerDataGeneratorConsequentValuesauthorID>false</IntegerDataGeneratorConsequentValuesauthorID>
+          <escapeSpaceSequence/>
+        </con:configuration>
+      </con:dataSource>
+      <con:shared>true</con:shared>
+      <con:restartShared>true</con:restartShared>
+      <con:property>title</con:property>
+      <con:property>fullMatch</con:property>
+      <con:property>authorID</con:property>
+      <con:restartOnRun>true</con:restartOnRun>
+      <con:stopDatasourceExhausted>false</con:stopDatasourceExhausted>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="GET Request" id="af10d7bb-8705-4a73-8315-814e6737f544">
+    <con:settings/>
+    <con:config service="Darth Library" resourcePath="/SE-Design/Darth_Library_Fork/1.0.0/books" methodName="GET" xsi:type="con:RestRequestStep">
+      <con:restRequest name="GET Request" id="c9613b36-44f0-4073-b0c3-b2fb1ba5839a" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://virtserver.swaggerhub.com</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://virtserver.swaggerhub.com/SE-Design/Darth_Library_Fork/1.0.0/books</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="a9d8bc97-f029-45ae-9dc7-66120592b162" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="SwaggerComplianceAssertion" id="470ffab8-2800-4659-9897-a924e5367e51" name="Swagger Compliance Assertion">
+          <con:configuration>
+            <swaggerUrl>https://api.swaggerhub.com/apis/SE-Design/Darth_Library_Fork/1.0.0</swaggerUrl>
+            <strictMode>true</strictMode>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="eafef589-a0cf-46df-b03c-ca853a91c40c" name="Response SLA">
+          <con:configuration>
+            <SLA>200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="fullMatch" value="${Data Source#fullMatch}"/>
+          <con:entry key="title" value="${Data Source#title}"/>
+          <con:entry key="authorID" value="${Data Source#authorID}"/>
+        </con:parameters>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="datasourceloop" name="Data Source Loop" id="8b144e4f-372c-4d2d-893a-83243d15a4df">
+    <con:settings/>
+    <con:config>
+      <dataSourceStep>Data Source</dataSourceStep>
+      <targetStep>GET Request</targetStep>
+      <discardResults>true</discardResults>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:con="http://eviware.com/soapui/config" name="/authors" path="/authors" id="252c070f-6f0d-44c0-9090-ed3ecbbf7e0b">
+  <con:settings id="8e145ca7-dd5d-4d4b-926d-c6055de08f3b">
+    <con:setting id="252c070f-6f0d-44c0-9090-ed3ecbbf7e0bfileName">%2Fauthors</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="GET" id="4b9234cd-0560-4799-a88e-5077f01259e8" method="GET">
+    <con:description>Returns array based on author search params.
+GETs array of author objects based on query</con:description>
+    <con:settings/>
+    <con:parameters>
+      <con:parameter>
+        <con:name>first_name</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>first name search parameter</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>last_name</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>last name search parameter</con:description>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:sampleContent>{
+  "status" : 200,
+  "results" : [ {
+    "id" : "254",
+    "first_name" : "Darth",
+    "last_name" : "Sidious",
+    "_link" : "/authors/254"
+  }, {
+    "id" : "255",
+    "first_name" : "Wilhuff",
+    "last_name" : "Tarkin",
+    "_link" : "/authors/255"
+  }, {
+    "id" : "256",
+    "first_name" : "Orson",
+    "last_name" : "Krennic",
+    "_link" : "/authors/256"
+  } ]
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>404</con:status>
+      <con:params/>
+      <con:sampleContent>{
+  "status" : 404,
+  "message" : "This was not the request you're looking for."
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>500</con:status>
+      <con:params/>
+      <con:sampleContent>{
+  "status" : 500,
+  "message" : "There is a great disturbance in the server."
+}</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="02a185e2-7091-48f5-a1ef-ca62c6715dd1" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://virtserver.swaggerhub.com</con:endpoint>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+  <con:method name="POST" id="a8d0841d-5c11-4af2-9219-75b1f32a6bfc" method="POST">
+    <con:description>Returns object w/ID.
+POSTs an author object to our DB</con:description>
+    <con:settings/>
+    <con:parameters/>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>201</con:status>
+      <con:params/>
+      <con:sampleContent>{
+  "id" : 254,
+  "first_name" : "Darth",
+  "last_name" : "Sidious",
+  "_link" : "/authors/254"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>404</con:status>
+      <con:params/>
+      <con:sampleContent>{
+  "status" : 404,
+  "message" : "This was not the request you're looking for."
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>500</con:status>
+      <con:params/>
+      <con:sampleContent>{
+  "status" : 500,
+  "message" : "There is a great disturbance in the server."
+}</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="ce742e2d-78a5-46e6-8b2c-22c36460aef1" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://virtserver.swaggerhub.com</con:endpoint>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:con="http://eviware.com/soapui/config" name="/books/{id}" path="/books/{id}" id="5850c60b-c91c-46b8-a564-63f1abc7f020">
+  <con:settings id="029ef670-cb83-44a1-8b4a-e3f885f6fc84">
+    <con:setting id="5850c60b-c91c-46b8-a564-63f1abc7f020fileName">%2Fbooks%2F%7Bid%7D</con:setting>
+  </con:settings>
+  <con:parameters>
+    <con:parameter required="true">
+      <con:name>id</con:name>
+      <con:style>TEMPLATE</con:style>
+      <con:dataType>string</con:dataType>
+      <con:description>Book ID to update</con:description>
+    </con:parameter>
+  </con:parameters>
+  <con:method name="GET" id="336d70cb-a83c-45a9-b6b4-ef8f7edc1649" method="GET">
+    <con:description>Returns single book object based on ID
+GETs a single book object.</con:description>
+    <con:settings/>
+    <con:parameters/>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:sampleContent>{
+  "status" : 200,
+  "result" : {
+    "id" : 66,
+    "title" : "The Tragedy of Darth Plagueis the Wise",
+    "description" : "Not a story the Jedi would tell you",
+    "author" : {
+      "id" : 254,
+      "first_name" : "Darth",
+      "last_name" : "Sidious",
+      "_link" : "/authors/254"
+    },
+    "_link" : "/books/66"
+  }
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>404</con:status>
+      <con:params/>
+      <con:sampleContent>{
+  "status" : 404,
+  "message" : "This was not the request you're looking for."
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>500</con:status>
+      <con:params/>
+      <con:sampleContent>{
+  "status" : 500,
+  "message" : "There is a great disturbance in the server."
+}</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="1be94a04-2044-480f-b1a8-ce68db3cf0c4" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://virtserver.swaggerhub.com</con:endpoint>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+  <con:method name="DELETE" id="82e54373-49ad-4de8-b28c-03707866242f" method="DELETE">
+    <con:description>Deletes a created book based by ID - does not support name. Returns deleted object.
+DELETEs book object</con:description>
+    <con:settings/>
+    <con:parameters/>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:sampleContent>{
+  "id" : 66,
+  "title" : "The Tragedy of Darth Plagueis the Wise",
+  "description" : "Not a story the Jedi would tell you",
+  "author" : {
+    "id" : 254,
+    "first_name" : "Darth",
+    "last_name" : "Sidious",
+    "_link" : "/authors/254"
+  },
+  "_link" : "/books/66"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>404</con:status>
+      <con:params/>
+      <con:sampleContent>{
+  "status" : 404,
+  "message" : "This was not the request you're looking for."
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>500</con:status>
+      <con:params/>
+      <con:sampleContent>{
+  "status" : 500,
+  "message" : "There is a great disturbance in the server."
+}</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="94715b25-9ccb-40aa-951f-d5c5a9a0c1b7" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://virtserver.swaggerhub.com</con:endpoint>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+  <con:method name="PATCH" id="834e50b0-0564-4d35-8873-cc8c5ddc0cfd" method="PATCH">
+    <con:description>Updates a created book based by ID - does not support name. Returns deleted object.
+PATCHs book object</con:description>
+    <con:settings/>
+    <con:parameters/>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:sampleContent>{
+  "id" : 66,
+  "title" : "The Tragedy of Darth Plagueis the Wise",
+  "description" : "Not a story the Jedi would tell you",
+  "author" : {
+    "id" : 254,
+    "first_name" : "Darth",
+    "last_name" : "Sidious",
+    "_link" : "/authors/254"
+  },
+  "_link" : "/books/66"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>404</con:status>
+      <con:params/>
+      <con:sampleContent>{
+  "status" : 404,
+  "message" : "This was not the request you're looking for."
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>500</con:status>
+      <con:params/>
+      <con:sampleContent>{
+  "status" : 500,
+  "message" : "There is a great disturbance in the server."
+}</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="7975735b-0fc4-4cc8-b1cf-8823719b9a5c" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://virtserver.swaggerhub.com</con:endpoint>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

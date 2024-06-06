@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:con="http://eviware.com/soapui/config" name="/subjects" path="/subjects" id="12a7f521-4ccb-4b7a-a091-1b4b4f963766">
+  <con:settings id="dfa1d0fc-49a7-4e0d-b301-8f6ce166ad25">
+    <con:setting id="12a7f521-4ccb-4b7a-a091-1b4b4f963766fileName">%2Fsubjects</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="GET" id="16885655-ad18-4bc1-bcd9-446ee16a76f1" method="GET">
+    <con:description>This resource is used to search our book database, and retrieve a set of objects related to your query. If there are no objects to return, the API will still return a 200 Status, but the "results" set will be an empty array and should be accounted for something else that is here.
+Retrives an array of book objects scoped to title or authorID.</con:description>
+    <con:settings/>
+    <con:parameters>
+      <con:parameter>
+        <con:name>title</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Title string to query. API will return both whole and partial matches dependent on the *fullMatch* parameter.</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>fullMatch</con:name>
+        <con:style>QUERY</con:style>
+        <con:dataType>boolean</con:dataType>
+        <con:description>Boolean value of whether or not to return and exact match to the title query string.</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>authorID</con:name>
+        <con:style>QUERY</con:style>
+        <con:dataType>integer</con:dataType>
+        <con:description>ID of author to retrieve related books. Similar functionality can be found by querying */authors/{id}/books* if that level is desired.</con:description>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>404</con:status>
+      <con:params/>
+      <con:sampleContent>{
+  "status" : 404,
+  "message" : "This was not the request you're looking for."
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>500</con:status>
+      <con:params/>
+      <con:sampleContent>{
+  "status" : 500,
+  "message" : "There is a great disturbance in the server."
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:sampleContent>{
+  "status" : 200,
+  "results" : [ {
+    "id" : "66",
+    "title" : "The Tragedy of Darth Plagueis the Wise",
+    "author_id" : 254,
+    "_link" : "/books/66"
+  }, {
+    "id" : "67",
+    "title" : "Lord Vader: A Story of Rebirth",
+    "author_id" : 387,
+    "_link" : "/books/67"
+  }, {
+    "id" : "68",
+    "title" : "Constructing Your First Lightsaber - A Beginners Guide",
+    "author_id" : 89,
+    "_link" : "/books/68"
+  }, {
+    "id" : "69",
+    "title" : "The Power of the Dark Side",
+    "author_id" : 387,
+    "_link" : "/books/69"
+  } ]
+}</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="5784e6e3-d840-410b-9334-0ea74608c6dd" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://virtserver.swaggerhub.com</con:endpoint>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

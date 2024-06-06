@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Weather" path="/data/2.5/weather" id="2451e969-1551-427e-8ce1-4e944225ae04">
+  <con:settings id="d4aa9a55-3804-4c99-8137-95c5b7275c70">
+    <con:setting id="2451e969-1551-427e-8ce1-4e944225ae04fileName">Weather</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Weather" id="44eaed52-43bb-4df1-8542-95f301a47a3d" method="GET">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>lat</con:name>
+        <con:value>35</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>35</con:default>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>lon</con:name>
+        <con:value>139</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>139</con:default>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>APPID</con:name>
+        <con:value>7e97e6a5d09cc6eb10a5586f9983cd3f</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>7e97e6a5d09cc6eb10a5586f9983cd3f</con:default>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json; charset=utf-8</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:element xmlns:weat="http://api.openweathermap.org/data/2.5/weather">weat:Response</con:element>
+    </con:representation>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json; charset=utf-8</con:mediaType>
+      <con:status>400</con:status>
+      <con:params/>
+      <con:element xmlns:weat="http://api.openweathermap.org/data/2.5/weather">weat:Fault</con:element>
+    </con:representation>
+    <con:request name="Request 1" id="b27bab43-981e-465f-b390-29cd35f3b079" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>http://api.openweathermap.org</con:endpoint>
+      <con:parameters>
+        <con:entry key="APPID" value="7e97e6a5d09cc6eb10a5586f9983cd3f"/>
+        <con:entry key="lon" value="139"/>
+        <con:entry key="lat" value="35"/>
+      </con:parameters>
+      <con:parameterOrder>
+        <con:entry>lat</con:entry>
+        <con:entry>lon</con:entry>
+        <con:entry>APPID</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>

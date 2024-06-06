@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:interface xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="con:RestService" id="0b5eb1c4-7c76-48e1-b343-5ea22a570bb7" name="Darth Library" type="rest_ex" wadlVersion="https://swagger.io/swagger2/specification" definitionUrl="https://api.swaggerhub.com/apis/SE-Design/Darth_Library_Fork/1.0.0" basePath="/SE-Design/Darth_Library_Fork/1.0.0">
+  <con:description id="afb75539-5cd6-40d7-aa62-c2ef81fb2571">The Death Stars internal library catalog</con:description>
+  <con:settings id="6b171009-aa07-4d56-844d-3e1147ed7afd">
+    <con:setting id="0b5eb1c4-7c76-48e1-b343-5ea22a570bb7fileName">Darth-Library</con:setting>
+  </con:settings>
+  <con:definitionCache/>
+  <con:endpoints>
+    <con:endpoint>https://virtserver.swaggerhub.com</con:endpoint>
+  </con:endpoints>
+</con:interface>
